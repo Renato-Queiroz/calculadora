@@ -16,7 +16,8 @@ public class Calculadora {
         do {
             opcao = scanner.next().toUpperCase().charAt(0);
             switch (opcao) {
-                case 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H' -> {
+                case 'X'->{return;}
+                case 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J' -> {
                     apagaMenu();
                     System.out.println("A OPÇÃO SELECIONADA FOI A: " + opcao);
                     return;
