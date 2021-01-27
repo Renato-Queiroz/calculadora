@@ -42,16 +42,19 @@ public class Calculadora {
                 case 'D' -> {
                     apagaMenu();
                     System.out.println("A OPÇÃO SELECIONADA FOI A: " + opcao);
+                    divisaoDeDoisNumeros();
                     return;
                 }
                 case 'E' -> {
                     apagaMenu();
                     System.out.println("A OPÇÃO SELECIONADA FOI A: " + opcao);
+                    raizQuadradaDeUmNumero();
                     return;
                 }
                 case 'F' -> {
                     apagaMenu();
                     System.out.println("A OPÇÃO SELECIONADA FOI A: " + opcao);
+                    potenciaDeUmNumero();
                     return;
                 }
                 case 'G' -> {
@@ -111,5 +114,35 @@ public class Calculadora {
         System.out.print("Digite o numero 2: ");
         BigDecimal num2 = BigDecimal.valueOf(scanner.nextDouble());
         System.out.println("O produto dos números é: " + num1.multiply(num2));
+    }
+
+    private static void divisaoDeDoisNumeros() {
+        Scanner scanner = new Scanner(System.in);
+        scanner.useLocale(Locale.US);
+        System.out.print("Digite o numero 1: ");
+        BigDecimal num1 = BigDecimal.valueOf(scanner.nextDouble());
+        System.out.print("Digite o numero 2: ");
+        BigDecimal num2 = BigDecimal.valueOf(scanner.nextDouble());
+        System.out.println("A divisão dos números é: " + num1.divide(num2));
+    }
+
+    private static void raizQuadradaDeUmNumero() {
+        Scanner scanner = new Scanner(System.in);
+        scanner.useLocale(Locale.US);
+        System.out.print("Digite um numero: ");
+        double num1 =scanner.nextDouble();
+        num1 = Math.sqrt(num1);
+        BigDecimal result = BigDecimal.valueOf(num1);
+        System.out.println("A raiz quadrada do número é: " + result);
+    }
+    private static void potenciaDeUmNumero() {
+        Scanner scanner = new Scanner(System.in);
+        scanner.useLocale(Locale.US);
+        System.out.print("Digite o numero da base: ");
+        double num1 = scanner.nextDouble();
+        System.out.print("Digite o numero do expoente: ");
+        double num2 =scanner.nextDouble();
+        double result = Math.pow(num1, num2);
+        System.out.println("A potencia do número é: " + result);
     }
 }
