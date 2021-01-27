@@ -3,7 +3,6 @@ import java.math.BigDecimal;
 import java.util.Locale;
 import java.util.Scanner;
 
-
 public class Calculadora {
 
     public static void main(String[] args) throws IOException, InterruptedException {
