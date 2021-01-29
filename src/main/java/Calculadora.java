@@ -22,62 +22,86 @@ public class Calculadora {
                 }
                 case 'A' -> {
                     apagaMenu();
-                    System.out.println("A OPÇÃO SELECIONADA FOI A: " + opcao);
-                    Calculadora.somaDoisNumeros();
+                    System.out.print("Digite o numero 1: ");
+                    BigDecimal num1 = BigDecimal.valueOf(scanner.nextDouble());
+                    System.out.print("Digite o numero 2: ");
+                    BigDecimal num2 = BigDecimal.valueOf(scanner.nextDouble());
+                    System.out.println("Soma = " + somaDoisNumeros(num1, num2));
                     return;
                 }
                 case 'B' -> {
                     apagaMenu();
-                    System.out.println("A OPÇÃO SELECIONADA FOI A: " + opcao);
-                    Calculadora.subtraiDoisNumeros();
+                    System.out.print("Digite o numero 1: ");
+                    BigDecimal num1 = BigDecimal.valueOf(scanner.nextDouble());
+                    System.out.print("Digite o numero 2: ");
+                    BigDecimal num2 = BigDecimal.valueOf(scanner.nextDouble());
+                    System.out.println("Diferença = " + subtraiDoisNumeros(num1, num2));
                     return;
                 }
                 case 'C' -> {
                     apagaMenu();
-                    System.out.println("A OPÇÃO SELECIONADA FOI A: " + opcao);
-                    multiplicaDoisNumeros();
+                    System.out.print("Digite o numero 1: ");
+                    BigDecimal num1 = BigDecimal.valueOf(scanner.nextDouble());
+                    System.out.print("Digite o numero 2: ");
+                    BigDecimal num2 = BigDecimal.valueOf(scanner.nextDouble());
+                    System.out.println("Produto = " + multiplicaDoisNumeros(num1, num2));
                     return;
                 }
                 case 'D' -> {
                     apagaMenu();
-                    System.out.println("A OPÇÃO SELECIONADA FOI A: " + opcao);
-                    divisaoDeDoisNumeros();
+                    System.out.print("Digite o numero 1: ");
+                    BigDecimal num1 = BigDecimal.valueOf(scanner.nextDouble());
+                    System.out.print("Digite o numero 2: ");
+                    BigDecimal num2 = BigDecimal.valueOf(scanner.nextDouble());
+                    System.out.println("Divisão = " + divisaoDeDoisNumeros(num1, num2));
                     return;
                 }
                 case 'E' -> {
                     apagaMenu();
-                    System.out.println("A OPÇÃO SELECIONADA FOI A: " + opcao);
-                    raizQuadradaDeUmNumero();
+                    System.out.print("Digite o numero que deseja saber a raiz quadrada: ");
+                    double num = scanner.nextDouble();
+                    System.out.println("A raiz quadrada do número é: " + raizQuadradaDeUmNumero(num));
                     return;
                 }
                 case 'F' -> {
                     apagaMenu();
-                    System.out.println("A OPÇÃO SELECIONADA FOI A: " + opcao);
-                    potenciaDeUmNumero();
+                    System.out.print("Digite o numero da base: ");
+                    double num1 = scanner.nextDouble();
+                    System.out.print("Digite o numero do expoente: ");
+                    double num2 = scanner.nextDouble();
+                    System.out.println("A potencia do número é: " + potenciaDeUmNumero(num1, num2));
                     return;
                 }
                 case 'G' -> {
                     apagaMenu();
-                    System.out.println("A OPÇÃO SELECIONADA FOI A: " + opcao);
-                    fatorialDeUmNumero();
+                    System.out.print("Digite o numero a ser calculado: ");
+                    double num = scanner.nextDouble();
+                    System.out.println("O fatorial do número " + num + " é: " + fatorialDeUmNumero(num));
                     return;
                 }
                 case 'H' -> {
                     apagaMenu();
-                    System.out.println("A OPÇÃO SELECIONADA FOI A: " + opcao);
-                    logaritmoBaseDez();
+                    System.out.print("Digite um numero: ");
+                    double num = scanner.nextDouble();
+                    System.out.println("O log base 10 do número " + num + " é: " + logaritmoBaseDez(num));
                     return;
                 }
                 case 'I' -> {
                     apagaMenu();
-                    System.out.println("A OPÇÃO SELECIONADA FOI A: " + opcao);
-                    areaDeUmPoligonoRegular();
+                    System.out.print("Digite o valor do perímetro: ");
+                    double perimetro = scanner.nextDouble();
+                    System.out.print("Digite o valor da apótema: ");
+                    double apotema = scanner.nextDouble();
+                    System.out.println("A área do polígono regular é: " + areaDeUmPoligonoRegular(perimetro, apotema));
                     return;
                 }
                 case 'J' -> {
                     apagaMenu();
-                    System.out.println("A OPÇÃO SELECIONADA FOI A: " + opcao);
-                    hipotenusaDeUmTrianguloRetangulo();
+                    System.out.print("Digite o valor do cateto a: ");
+                    double catetoA = scanner.nextDouble();
+                    System.out.print("Digite o valor do cateto b: ");
+                    double catetoB = scanner.nextDouble();
+                    System.out.println("A hipotenusa do triângulo retângulo é: " + hipotenusaDeUmTrianguloRetangulo(catetoA, catetoB));
                     return;
                 }
                 default -> System.out.print("OPÇÃO INVÁLIDA, POR FAVOR DIGITE NOVAMENTE: ");
@@ -89,110 +113,50 @@ public class Calculadora {
         new ProcessBuilder("bash", "-c", "clear").inheritIO().start().waitFor();
     }
 
-    private static void somaDoisNumeros() {
-        Scanner scanner = new Scanner(System.in);
-        scanner.useLocale(Locale.US);
-        System.out.print("Digite o numero 1: ");
-        BigDecimal num1 = BigDecimal.valueOf(scanner.nextDouble());
-        System.out.print("Digite o numero 2: ");
-        BigDecimal num2 = BigDecimal.valueOf(scanner.nextDouble());
-        System.out.println("A soma dos números é: " + num1.add(num2));
+    private static BigDecimal somaDoisNumeros(BigDecimal num1, BigDecimal num2) {
+        return num1.add(num2);
     }
 
-    private static void subtraiDoisNumeros() {
-        Scanner scanner = new Scanner(System.in);
-        scanner.useLocale(Locale.US);
-        System.out.print("Digite o numero 1: ");
-        BigDecimal num1 = BigDecimal.valueOf(scanner.nextDouble());
-        System.out.print("Digite o numero 2: ");
-        BigDecimal num2 = BigDecimal.valueOf(scanner.nextDouble());
-        System.out.println("A subtração dos números é: " + num1.subtract(num2));
+    private static BigDecimal subtraiDoisNumeros(BigDecimal num1, BigDecimal num2) {
+        return num1.subtract(num2);
     }
 
-    private static void multiplicaDoisNumeros() {
-        Scanner scanner = new Scanner(System.in);
-        scanner.useLocale(Locale.US);
-        System.out.print("Digite o numero 1: ");
-        BigDecimal num1 = BigDecimal.valueOf(scanner.nextDouble());
-        System.out.print("Digite o numero 2: ");
-        BigDecimal num2 = BigDecimal.valueOf(scanner.nextDouble());
-        System.out.println("O produto dos números é: " + num1.multiply(num2));
+    private static BigDecimal multiplicaDoisNumeros(BigDecimal num1, BigDecimal num2) {
+        return num1.multiply(num2);
     }
 
-    private static void divisaoDeDoisNumeros() {
-        Scanner scanner = new Scanner(System.in);
-        scanner.useLocale(Locale.US);
-        System.out.print("Digite o numero 1: ");
-        BigDecimal num1 = BigDecimal.valueOf(scanner.nextDouble());
-        System.out.print("Digite o numero 2: ");
-        BigDecimal num2 = BigDecimal.valueOf(scanner.nextDouble());
-        System.out.println("A divisão dos números é: " + num1.divide(num2));
+    private static BigDecimal divisaoDeDoisNumeros(BigDecimal num1, BigDecimal num2) {
+        return num1.divide(num2);
     }
 
-    private static void raizQuadradaDeUmNumero() {
-        Scanner scanner = new Scanner(System.in);
-        scanner.useLocale(Locale.US);
-        System.out.print("Digite um numero: ");
-        double num1 = scanner.nextDouble();
-        num1 = Math.sqrt(num1);
-        BigDecimal result = BigDecimal.valueOf(num1);
-        System.out.println("A raiz quadrada do número é: " + result);
+    private static double raizQuadradaDeUmNumero(double num) {
+        num = Math.sqrt(num);
+        return num;
     }
 
-    private static void potenciaDeUmNumero() {
-        Scanner scanner = new Scanner(System.in);
-        scanner.useLocale(Locale.US);
-        System.out.print("Digite o numero da base: ");
-        double num1 = scanner.nextDouble();
-        System.out.print("Digite o numero do expoente: ");
-        double num2 = scanner.nextDouble();
-        double result = Math.pow(num1, num2);
-        System.out.println("A potencia do número é: " + result);
+    private static double potenciaDeUmNumero(double num1, double num2) {
+        return Math.pow(num1, num2);
     }
 
-    private static void fatorialDeUmNumero() {
-        Scanner scanner = new Scanner(System.in);
-        scanner.useLocale(Locale.US);
-        System.out.print("Digite um numero: ");
-        double x = scanner.nextInt();
-        double f = x;
-        while (x > 1) {
-            f = f * (x - 1);
-            x--;
+    private static double fatorialDeUmNumero(double num) {
+        double f = num;
+        while (num > 1) {
+            f = f * (num - 1);
+            num--;
         }
-        System.out.println(f);
+        return (f);
     }
 
-    private static void logaritmoBaseDez() {
-        Scanner scanner = new Scanner(System.in);
-        scanner.useLocale(Locale.US);
-        System.out.print("Digite um numero: ");
-        double num = scanner.nextDouble();
-        num = Math.log10(num);
-        System.out.println(num);
+    private static double logaritmoBaseDez(double num) {
+        return Math.log10(num);
     }
 
-    private static void areaDeUmPoligonoRegular() {
-        // formula para calculo de um poligono regular: 1/2 * perimetro * apótema.
-        Scanner scanner = new Scanner(System.in);
-        scanner.useLocale(Locale.US);
-        double constante = 0.5;
-        System.out.print("Digite o valor do perímetro: ");
-        double perimetro = scanner.nextDouble();
-        System.out.print("Digite o valor da apótema: ");
-        double apotema = scanner.nextDouble();
-        System.out.println("A área do polígono regular é: " + BigDecimal.valueOf(constante * perimetro * apotema));
+    private static BigDecimal areaDeUmPoligonoRegular(double perimetro, double apotema) { // formula para calculo de um poligono regular: 1/2 * perimetro * apótema.
+        return BigDecimal.valueOf(0.5 * perimetro * apotema);
     }
 
-    private static void hipotenusaDeUmTrianguloRetangulo() {
-        // formula matemática: h² = a² + b².
-        Scanner scanner = new Scanner(System.in);
-        scanner.useLocale(Locale.US);
-        System.out.print("Digite o valor do cateto a: ");
-        double catetoA = scanner.nextDouble();
-        System.out.print("Digite o valor do cateto b: ");
-        double catetoB = scanner.nextDouble();
+    private static double hipotenusaDeUmTrianguloRetangulo(double catetoA, double catetoB) {// formula matemática: h² = a² + b².
         double somaQuadradoCatetos = Math.pow(catetoA, 2) + Math.pow(catetoB, 2);
-        System.out.println("A hipotenusa do triângulo retângulo é: " + Math.sqrt(somaQuadradoCatetos));
+        return Math.sqrt(somaQuadradoCatetos);
     }
 }
