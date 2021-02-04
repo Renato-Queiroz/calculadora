@@ -27,7 +27,7 @@ public class Main {
                     BigDecimal num1 = BigDecimal.valueOf(scanner.nextDouble());
                     System.out.print("Digite o numero 2: ");
                     BigDecimal num2 = BigDecimal.valueOf(scanner.nextDouble());
-                    System.out.println("Soma = " + calculadora.somaDoisNumeros(num1, num2));
+                    System.out.println("Soma = " + calculadora.somar(num1, num2));
                     return;
                 }
                 case 'B' -> {
@@ -36,7 +36,7 @@ public class Main {
                     BigDecimal num1 = BigDecimal.valueOf(scanner.nextDouble());
                     System.out.print("Digite o numero 2: ");
                     BigDecimal num2 = BigDecimal.valueOf(scanner.nextDouble());
-                    System.out.println("Diferença = " + calculadora.subtraiDoisNumeros(num1, num2));
+                    System.out.println("Diferença = " + calculadora.subtrair(num1, num2));
                     return;
                 }
                 case 'C' -> {
@@ -45,7 +45,7 @@ public class Main {
                     BigDecimal num1 = BigDecimal.valueOf(scanner.nextDouble());
                     System.out.print("Digite o numero 2: ");
                     BigDecimal num2 = BigDecimal.valueOf(scanner.nextDouble());
-                    System.out.println("Produto = " + calculadora.multiplicaDoisNumeros(num1, num2));
+                    System.out.println("Produto = " + calculadora.multiplicar(num1, num2));
                     return;
                 }
                 case 'D' -> {
@@ -54,14 +54,14 @@ public class Main {
                     BigDecimal num1 = BigDecimal.valueOf(scanner.nextDouble());
                     System.out.print("Digite o numero 2: ");
                     BigDecimal num2 = BigDecimal.valueOf(scanner.nextDouble());
-                    System.out.println("Divisão = " + calculadora.divisaoDeDoisNumeros(num1, num2));
+                    System.out.println("Divisão = " + calculadora.divisao(num1, num2));
                     return;
                 }
                 case 'E' -> {
                     calculadora.apagaMenu();
                     System.out.print("Digite o numero que deseja saber a raiz quadrada: ");
                     double num = scanner.nextDouble();
-                    System.out.println("A raiz quadrada do número é: " + calculadora.raizQuadradaDeUmNumero(num));
+                    System.out.println("A raiz quadrada do número é: " + calculadora.raizQuadrada(num));
                     return;
                 }
                 case 'F' -> {
@@ -70,21 +70,21 @@ public class Main {
                     double num1 = scanner.nextDouble();
                     System.out.print("Digite o numero do expoente: ");
                     double num2 = scanner.nextDouble();
-                    System.out.println("A potencia do número é: " + calculadora.potenciaDeUmNumero(num1, num2));
+                    System.out.println("A potencia do número é: " + calculadora.potencia(num1, num2));
                     return;
                 }
                 case 'G' -> {
                     calculadora.apagaMenu();
                     System.out.print("Digite o numero a ser calculado: ");
                     double num = scanner.nextDouble();
-                    System.out.println("O fatorial do número " + num + " é: " + calculadora.fatorialDeUmNumero(num));
+                    System.out.println("O fatorial do número " + num + " é: " + calculadora.fatorial(num));
                     return;
                 }
                 case 'H' -> {
                     calculadora.apagaMenu();
                     System.out.print("Digite um numero: ");
                     double num = scanner.nextDouble();
-                    System.out.println("O log base 10 do número " + num + " é: " + calculadora.logaritmoBaseDez(num));
+                    System.out.println("O log base 10 do número " + num + " é: " + calculadora.logaritmo(num));
                     return;
                 }
                 case 'I' -> {
