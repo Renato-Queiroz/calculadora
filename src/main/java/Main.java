@@ -24,11 +24,8 @@ public class Main {
                 case 'A' -> {
                     calculadora.apagaMenu();
                     System.out.print("Digite o numero 1: ");
-                    BigDecimal num1 = scanner.nextBigDecimal();
-                    System.out.print("Digite o numero 2: ");
-                    BigDecimal num2 = scanner.nextBigDecimal();
-                    new Soma().calcular(num1,num2, BigDecimal.valueOf(0));
-                    System.out.println("soma = " +ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ);
+                    BigDecimal result = new Soma().calcular();
+                    System.out.println("soma dos numeros = " + result);
                     return;
                 }
                 case 'B' -> {
