@@ -23,26 +23,42 @@ public class Main {
                 }
                 case 'A' -> {
                     calculadora.apagaMenu();
-                    BigDecimal result = new Soma().calcular();
-                    System.out.println("Resultado = " + result);
+                    System.out.print("Digite o numero 1: ");
+                    BigDecimal num1 = scanner.nextBigDecimal();
+                    System.out.print("Digite o numero 2: ");
+                    BigDecimal num2 = scanner.nextBigDecimal();
+                    BigDecimal resultado = new Soma().calcular(num1,num2);
+                    System.out.println("Resultado = " + resultado);
                     return;
                 }
                 case 'B' -> {
                     calculadora.apagaMenu();
-                    BigDecimal result = new Subtracao().calcular();
-                    System.out.println("Resultado = " + result);
+                    System.out.print("Digite o numero 1: ");
+                    BigDecimal num1 = scanner.nextBigDecimal();
+                    System.out.print("Digite o numero 2: ");
+                    BigDecimal num2 = scanner.nextBigDecimal();
+                    BigDecimal resultado = new Subtracao().calcular(num1,num2);
+                    System.out.println("Resultado = " + resultado);
                     return;
                 }
                 case 'C' -> {
                     calculadora.apagaMenu();
-                    BigDecimal result = new Multiplicacao().calcular();
-                    System.out.println("Resultado = " + result);
+                    System.out.print("Digite o numero 1: ");
+                    BigDecimal num1 = scanner.nextBigDecimal();
+                    System.out.print("Digite o numero 2: ");
+                    BigDecimal num2 = scanner.nextBigDecimal();
+                    BigDecimal resultado = new Multiplicacao().calcular(num1,num2);
+                    System.out.println("Resultado = " + resultado);
                     return;
                 }
                 case 'D' -> {
                     calculadora.apagaMenu();
-                    BigDecimal result = new Divisao().calcular();
-                    System.out.println("Resultado = " + result);
+                    System.out.print("Digite o numero 1: ");
+                    BigDecimal num1 = scanner.nextBigDecimal();
+                    System.out.print("Digite o numero 2: ");
+                    BigDecimal num2 = scanner.nextBigDecimal();
+                    BigDecimal resultado = new Divisao().calcular(num1,num2);
+                    System.out.println("Resultado = " + resultado);
                     return;
                 }
                 case 'E' -> {
@@ -54,11 +70,12 @@ public class Main {
                 }
                 case 'F' -> {
                     calculadora.apagaMenu();
-                    System.out.print("Digite o numero da base: ");
-                    double num1 = scanner.nextDouble();
-                    System.out.print("Digite o numero do expoente: ");
-                    double num2 = scanner.nextDouble();
-                    System.out.println("A potencia do número é: " + calculadora.potencia(num1, num2));
+                    System.out.print("Digite o numero 1: ");
+                    BigDecimal num1 = scanner.nextBigDecimal();
+                    System.out.print("Digite o numero 2: ");
+                    BigDecimal num2 = scanner.nextBigDecimal();
+                    BigDecimal resultado = new Potencia().calcular(num1,num2);
+                    System.out.println("Resultado = " + resultado);
                     return;
                 }
                 case 'G' -> {
@@ -78,19 +95,21 @@ public class Main {
                 case 'I' -> {
                     calculadora.apagaMenu();
                     System.out.print("Digite o valor do perímetro: ");
-                    double perimetro = scanner.nextDouble();
+                    BigDecimal perimetro = scanner.nextBigDecimal();
                     System.out.print("Digite o valor da apótema: ");
-                    double apotema = scanner.nextDouble();
-                    System.out.println("A área do polígono regular é: " + calculadora.areaDeUmPoligonoRegular(perimetro, apotema));
+                    BigDecimal apotema = scanner.nextBigDecimal();
+                    BigDecimal resultado = new AreaDeUmPoligonoRegular().calcular(perimetro,apotema);
+                    System.out.println("Resultado = " + resultado);
                     return;
                 }
                 case 'J' -> {
                     calculadora.apagaMenu();
                     System.out.print("Digite o valor do cateto a: ");
-                    double catetoA = scanner.nextDouble();
+                    BigDecimal catetoA = scanner.nextBigDecimal();
                     System.out.print("Digite o valor do cateto b: ");
-                    double catetoB = scanner.nextDouble();
-                    System.out.println("A hipotenusa do triângulo retângulo é: " + calculadora.hipotenusaDeUmTrianguloRetangulo(catetoA, catetoB));
+                    BigDecimal catetoB = scanner.nextBigDecimal();
+                    BigDecimal resultado = new HipotenusaTrianguloRetangulo().calcular(catetoA,catetoB);
+                    System.out.println("Resultado = " + resultado);
                     return;
                 }
                 default -> System.out.print("OPÇÃO INVÁLIDA, POR FAVOR DIGITE NOVAMENTE: ");

@@ -1,17 +1,9 @@
 import java.math.BigDecimal;
-import java.util.Locale;
-import java.util.Scanner;
 
 public class Soma implements Ioperacoes {
 
     @Override
-    public BigDecimal calcular() {
-        Scanner scanner = new Scanner(System.in);
-        scanner.useLocale(Locale.US);
-        System.out.print("Digite o numero 1: ");
-        BigDecimal num1 = scanner.nextBigDecimal();
-        System.out.print("Digite o numero 2: ");
-        BigDecimal num2 = scanner.nextBigDecimal();
+    public BigDecimal calcular(BigDecimal num1, BigDecimal num2) {
         return num1.add(num2);
     }
 }
