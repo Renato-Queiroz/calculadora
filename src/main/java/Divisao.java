@@ -2,7 +2,7 @@ import java.math.BigDecimal;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class Soma implements Ioperacoes {
+public class Divisao implements Ioperacoes {
 
     @Override
     public BigDecimal calcular() {
@@ -12,6 +12,6 @@ public class Soma implements Ioperacoes {
         BigDecimal num1 = scanner.nextBigDecimal();
         System.out.print("Digite o numero 2: ");
         BigDecimal num2 = scanner.nextBigDecimal();
-        return num1.add(num2);
+        return num1.divide(num2);
     }
 }

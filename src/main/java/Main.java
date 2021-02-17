@@ -23,36 +23,26 @@ public class Main {
                 }
                 case 'A' -> {
                     calculadora.apagaMenu();
-                    System.out.print("Digite o numero 1: ");
                     BigDecimal result = new Soma().calcular();
-                    System.out.println("soma dos numeros = " + result);
+                    System.out.println("Resultado = " + result);
                     return;
                 }
                 case 'B' -> {
                     calculadora.apagaMenu();
-                    System.out.print("Digite o numero 1: ");
-                    BigDecimal num1 = BigDecimal.valueOf(scanner.nextDouble());
-                    System.out.print("Digite o numero 2: ");
-                    BigDecimal num2 = BigDecimal.valueOf(scanner.nextDouble());
-                    System.out.println("Diferença = " + calculadora.subtrair(num1, num2));
+                    BigDecimal result = new Subtracao().calcular();
+                    System.out.println("Resultado = " + result);
                     return;
                 }
                 case 'C' -> {
                     calculadora.apagaMenu();
-                    System.out.print("Digite o numero 1: ");
-                    BigDecimal num1 = BigDecimal.valueOf(scanner.nextDouble());
-                    System.out.print("Digite o numero 2: ");
-                    BigDecimal num2 = BigDecimal.valueOf(scanner.nextDouble());
-                    System.out.println("Produto = " + calculadora.multiplicar(num1, num2));
+                    BigDecimal result = new Multiplicacao().calcular();
+                    System.out.println("Resultado = " + result);
                     return;
                 }
                 case 'D' -> {
                     calculadora.apagaMenu();
-                    System.out.print("Digite o numero 1: ");
-                    BigDecimal num1 = BigDecimal.valueOf(scanner.nextDouble());
-                    System.out.print("Digite o numero 2: ");
-                    BigDecimal num2 = BigDecimal.valueOf(scanner.nextDouble());
-                    System.out.println("Divisão = " + calculadora.divisao(num1, num2));
+                    BigDecimal result = new Divisao().calcular();
+                    System.out.println("Resultado = " + result);
                     return;
                 }
                 case 'E' -> {

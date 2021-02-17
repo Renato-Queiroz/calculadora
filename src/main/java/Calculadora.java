@@ -7,19 +7,10 @@ public class Calculadora {
         new ProcessBuilder("bash", "-c", "clear").inheritIO().start().waitFor();
     }
 
-    //public BigDecimal somar(BigDecimal num1, BigDecimal num2) { return num1.add(num2); }//
-
-    public BigDecimal subtrair(BigDecimal num1, BigDecimal num2) {
-        return num1.subtract(num2);
-    }
-
-    public BigDecimal multiplicar(BigDecimal num1, BigDecimal num2) {
-        return num1.multiply(num2);
-    }
-
-    public BigDecimal divisao(BigDecimal num1, BigDecimal num2) {
-        return num1.divide(num2);
-    }
+    /*public BigDecimal somar(BigDecimal num1, BigDecimal num2) { return num1.add(num2); }
+    public BigDecimal subtrair(BigDecimal num1, BigDecimal num2) { return num1.subtract(num2); }
+    public BigDecimal multiplicar(BigDecimal num1, BigDecimal num2) { return num1.multiply(num2); }
+    public BigDecimal divisao(BigDecimal num1, BigDecimal num2) { return num1.divide(num2); } */
 
     public double raizQuadrada(double num) { num = Math.sqrt(num); return num; }
 
