@@ -18,45 +18,37 @@ public class Main {
         char opcao;
         do {
             opcao = scanner.next().toUpperCase().charAt(0);
+            BigDecimal num1 = BigDecimal.valueOf(0);
+            BigDecimal num2 = BigDecimal.valueOf(0);
+            if(opcao == 'A' || opcao == 'B' || opcao == 'C'|| opcao == 'D'){
+                System.out.print("Digite o numero 1: ");
+                num1 = scanner.nextBigDecimal();
+                System.out.print("Digite o numero 2: ");
+                num2 = scanner.nextBigDecimal();
+            }
             switch (opcao) {
                 case 'X' -> {
                 }
                 case 'A' -> {
                     calculadora.apagaMenu();
-                    System.out.print("Digite o numero 1: ");
-                    BigDecimal num1 = scanner.nextBigDecimal();
-                    System.out.print("Digite o numero 2: ");
-                    BigDecimal num2 = scanner.nextBigDecimal();
                     BigDecimal resultado = new Soma().calcular(num1,num2);
                     System.out.println("Resultado = " + resultado);
                     return;
                 }
                 case 'B' -> {
                     calculadora.apagaMenu();
-                    System.out.print("Digite o numero 1: ");
-                    BigDecimal num1 = scanner.nextBigDecimal();
-                    System.out.print("Digite o numero 2: ");
-                    BigDecimal num2 = scanner.nextBigDecimal();
                     BigDecimal resultado = new Subtracao().calcular(num1,num2);
                     System.out.println("Resultado = " + resultado);
                     return;
                 }
                 case 'C' -> {
                     calculadora.apagaMenu();
-                    System.out.print("Digite o numero 1: ");
-                    BigDecimal num1 = scanner.nextBigDecimal();
-                    System.out.print("Digite o numero 2: ");
-                    BigDecimal num2 = scanner.nextBigDecimal();
                     BigDecimal resultado = new Multiplicacao().calcular(num1,num2);
                     System.out.println("Resultado = " + resultado);
                     return;
                 }
                 case 'D' -> {
                     calculadora.apagaMenu();
-                    System.out.print("Digite o numero 1: ");
-                    BigDecimal num1 = scanner.nextBigDecimal();
-                    System.out.print("Digite o numero 2: ");
-                    BigDecimal num2 = scanner.nextBigDecimal();
                     BigDecimal resultado = new Divisao().calcular(num1,num2);
                     System.out.println("Resultado = " + resultado);
                     return;
@@ -70,11 +62,11 @@ public class Main {
                 }
                 case 'F' -> {
                     calculadora.apagaMenu();
-                    System.out.print("Digite o numero 1: ");
-                    BigDecimal num1 = scanner.nextBigDecimal();
-                    System.out.print("Digite o numero 2: ");
-                    BigDecimal num2 = scanner.nextBigDecimal();
-                    BigDecimal resultado = new Potencia().calcular(num1,num2);
+                    System.out.print("Digite o numero da base: ");
+                    BigDecimal base = scanner.nextBigDecimal();
+                    System.out.print("Digite o numero do expoente: ");
+                    BigDecimal expoente = scanner.nextBigDecimal();
+                    BigDecimal resultado = new Potencia().calcular(base,expoente);
                     System.out.println("Resultado = " + resultado);
                     return;
                 }
