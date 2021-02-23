@@ -1,9 +1,12 @@
 import java.math.BigDecimal;
 
 public class Soma implements Ioperacoes {
-
     @Override
-    public BigDecimal calcular(BigDecimal num1, BigDecimal num2) {
-        return num1.add(num2);
+    public Number calcular(Number... numeros) {
+        Number soma = 0;
+        for (Number num:numeros) {
+            soma = soma.doubleValue() + num.doubleValue();
+        }
+        return soma;
     }
 }

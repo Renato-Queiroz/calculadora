@@ -18,20 +18,19 @@ public class Main {
         char opcao;
         do {
             opcao = scanner.next().toUpperCase().charAt(0);
-            BigDecimal num1 = BigDecimal.valueOf(0);
-            BigDecimal num2 = BigDecimal.valueOf(0);
+            Number[] numeros = {};
             if(opcao == 'A' || opcao == 'B' || opcao == 'C'|| opcao == 'D'){
                 System.out.print("Digite o numero 1: ");
-                num1 = scanner.nextBigDecimal();
+                numeros[0] = scanner.nextBigDecimal();
                 System.out.print("Digite o numero 2: ");
-                num2 = scanner.nextBigDecimal();
+                numeros[1] = scanner.nextBigDecimal();
             }
             switch (opcao) {
                 case 'X' -> {
                 }
                 case 'A' -> {
                     calculadora.apagaMenu();
-                    BigDecimal resultado = new Soma().calcular(num1,num2);
+                    Number resultado = new Soma().calcular(numeros);
                     System.out.println("Resultado = " + resultado);
                     return;
                 }
