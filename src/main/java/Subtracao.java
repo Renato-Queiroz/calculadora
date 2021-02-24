@@ -1,11 +1,6 @@
-import java.math.BigDecimal;
-
-public class Subtracao  {
-/*
+public class Subtracao implements Ioperacoes {
     @Override
-    public BigDecimal calcular(BigDecimal num1, BigDecimal num2) {
-        return num1.subtract(num2);
+    public Number calcular(Number... numeros) {
+        return numeros[0].doubleValue() - numeros[1].doubleValue();
     }
-
- */
 }

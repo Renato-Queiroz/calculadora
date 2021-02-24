@@ -18,8 +18,9 @@ public class Main {
         char opcao;
         do {
             opcao = scanner.next().toUpperCase().charAt(0);
-            Number[] numeros = {};
+            Number[] numeros = new Number[1];
             if(opcao == 'A' || opcao == 'B' || opcao == 'C'|| opcao == 'D'){
+                numeros = new Number[2];
                 System.out.print("Digite o numero 1: ");
                 numeros[0] = scanner.nextBigDecimal();
                 System.out.print("Digite o numero 2: ");
@@ -30,52 +31,48 @@ public class Main {
                 }
                 case 'A' -> {
                     calculadora.apagaMenu();
-                    Number resultado = new Soma().calcular(numeros);
-                    System.out.println("Resultado = " + resultado);
+                    System.out.println("Resultado = " + new Soma().calcular(numeros));
                     return;
                 }
                 case 'B' -> {
                     calculadora.apagaMenu();
-                    BigDecimal resultado = new Subtracao().calcular(num1,num2);
-                    System.out.println("Resultado = " + resultado);
+                    System.out.println("Resultado = " + new Subtracao().calcular(numeros));
                     return;
                 }
                 case 'C' -> {
                     calculadora.apagaMenu();
-                    BigDecimal resultado = new Multiplicacao().calcular(num1,num2);
-                    System.out.println("Resultado = " + resultado);
+                    System.out.println("Resultado = " + new Multiplicacao().calcular(numeros));
                     return;
                 }
                 case 'D' -> {
                     calculadora.apagaMenu();
-                    BigDecimal resultado = new Divisao().calcular(num1,num2);
-                    System.out.println("Resultado = " + resultado);
+                    System.out.println("Resultado = " + new Divisao().calcular(numeros));
                     return;
                 }
                 case 'E' -> {
                     calculadora.apagaMenu();
-                    System.out.print("Digite o numero que deseja saber a raiz quadrada: ");
-                    double num = scanner.nextDouble();
-                    System.out.println("A raiz quadrada do número é: " + calculadora.raizQuadrada(num));
+                    System.out.print("Digite o numero que deseja calcular a raiz: ");
+                    numeros[0] = scanner.nextBigDecimal();
+                    System.out.println("Resultado = " + new RaizQuadrada().calcular(numeros[0]));
                     return;
                 }
                 case 'F' -> {
                     calculadora.apagaMenu();
+                    numeros = new Number[2];
                     System.out.print("Digite o numero da base: ");
-                    BigDecimal base = scanner.nextBigDecimal();
+                    numeros[0] = scanner.nextBigDecimal();
                     System.out.print("Digite o numero do expoente: ");
-                    BigDecimal expoente = scanner.nextBigDecimal();
-                    BigDecimal resultado = new Potencia().calcular(base,expoente);
-                    System.out.println("Resultado = " + resultado);
+                    numeros[1] = scanner.nextBigDecimal();
+                    System.out.println("Resultado = " + new Potencia().calcular(numeros[0],numeros[1]));
                     return;
                 }
                 case 'G' -> {
                     calculadora.apagaMenu();
                     System.out.print("Digite o numero a ser calculado: ");
-                    double num = scanner.nextDouble();
-                    System.out.println("O fatorial do número " + num + " é: " + calculadora.fatorial(num));
+                    numeros[0] = scanner.nextBigDecimal();
+                    System.out.println("O fatorial do número " + numeros[0] + " é: " + new Fatorial().calcular(numeros[0]));
                     return;
-                }
+                }/*
                 case 'H' -> {
                     calculadora.apagaMenu();
                     System.out.print("Digite um numero: ");
@@ -103,6 +100,7 @@ public class Main {
                     System.out.println("Resultado = " + resultado);
                     return;
                 }
+                */
                 default -> System.out.print("OPÇÃO INVÁLIDA, POR FAVOR DIGITE NOVAMENTE: ");
             }
         } while (opcao != 'X');
