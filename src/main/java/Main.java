@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -18,89 +17,79 @@ public class Main {
         char opcao;
         do {
             opcao = scanner.next().toUpperCase().charAt(0);
-            Number[] numeros = new Number[1];
-            if(opcao == 'A' || opcao == 'B' || opcao == 'C'|| opcao == 'D'){
-                numeros = new Number[2];
+            calculadora.apagaMenu();
+            Number[] numeros = new Number[2];
+            if (opcao == 'A' || opcao == 'B' || opcao == 'C' || opcao == 'D') {
                 System.out.print("Digite o numero 1: ");
                 numeros[0] = scanner.nextBigDecimal();
                 System.out.print("Digite o numero 2: ");
                 numeros[1] = scanner.nextBigDecimal();
             }
+            if (opcao == 'E' || opcao == 'G' || opcao == 'H') {
+                System.out.print("Digite o numero a ser calculado: ");
+                numeros[0] = scanner.nextBigDecimal();
+            }
+            if (opcao == 'F') {
+                System.out.print("Digite o numero da base: ");
+                numeros[0] = scanner.nextBigDecimal();
+                System.out.print("Digite o numero do expoente: ");
+                numeros[1] = scanner.nextBigDecimal();
+            }
+            if (opcao == 'I') {
+                System.out.print("Digite o valor do perímetro: ");
+                numeros[0] = scanner.nextBigDecimal();
+                System.out.print("Digite o valor da apótema: ");
+                numeros[1] = scanner.nextBigDecimal();
+            }
+            if (opcao == 'J') {
+                System.out.print("Digite o valor do cateto a: ");
+                numeros[0] = scanner.nextBigDecimal();
+                System.out.print("Digite o valor do cateto b: ");
+                numeros[0] = scanner.nextBigDecimal();
+            }
             switch (opcao) {
                 case 'X' -> {
                 }
                 case 'A' -> {
-                    calculadora.apagaMenu();
                     System.out.println("Resultado = " + new Soma().calcular(numeros));
                     return;
                 }
                 case 'B' -> {
-                    calculadora.apagaMenu();
                     System.out.println("Resultado = " + new Subtracao().calcular(numeros));
                     return;
                 }
                 case 'C' -> {
-                    calculadora.apagaMenu();
                     System.out.println("Resultado = " + new Multiplicacao().calcular(numeros));
                     return;
                 }
                 case 'D' -> {
-                    calculadora.apagaMenu();
                     System.out.println("Resultado = " + new Divisao().calcular(numeros));
                     return;
                 }
                 case 'E' -> {
-                    calculadora.apagaMenu();
-                    System.out.print("Digite o numero que deseja calcular a raiz: ");
-                    numeros[0] = scanner.nextBigDecimal();
-                    System.out.println("Resultado = " + new RaizQuadrada().calcular(numeros[0]));
+                    System.out.println("Resultado = " + new RaizQuadrada().calcular(numeros));
                     return;
                 }
                 case 'F' -> {
-                    calculadora.apagaMenu();
-                    numeros = new Number[2];
-                    System.out.print("Digite o numero da base: ");
-                    numeros[0] = scanner.nextBigDecimal();
-                    System.out.print("Digite o numero do expoente: ");
-                    numeros[1] = scanner.nextBigDecimal();
-                    System.out.println("Resultado = " + new Potencia().calcular(numeros[0],numeros[1]));
+                    System.out.println("Resultado = " + new Potencia().calcular(numeros));
                     return;
                 }
                 case 'G' -> {
-                    calculadora.apagaMenu();
-                    System.out.print("Digite o numero a ser calculado: ");
-                    numeros[0] = scanner.nextBigDecimal();
-                    System.out.println("O fatorial do número " + numeros[0] + " é: " + new Fatorial().calcular(numeros[0]));
+                    System.out.println("O fatorial do número " + numeros[0] + "! " + "= " + new Fatorial().calcular(numeros));
                     return;
-                }/*
+                }
                 case 'H' -> {
-                    calculadora.apagaMenu();
-                    System.out.print("Digite um numero: ");
-                    double num = scanner.nextDouble();
-                    System.out.println("O log base 10 do número " + num + " é: " + calculadora.logaritmo(num));
+                    System.out.println("O log base 10 do número " + numeros[0] + " é: " + new LogaritmoBaseDez().calcular(numeros));
                     return;
                 }
                 case 'I' -> {
-                    calculadora.apagaMenu();
-                    System.out.print("Digite o valor do perímetro: ");
-                    BigDecimal perimetro = scanner.nextBigDecimal();
-                    System.out.print("Digite o valor da apótema: ");
-                    BigDecimal apotema = scanner.nextBigDecimal();
-                    BigDecimal resultado = new AreaDeUmPoligonoRegular().calcular(perimetro,apotema);
-                    System.out.println("Resultado = " + resultado);
+                    System.out.println("Resultado = " + new AreaDeUmPoligonoRegular().calcular(numeros));
                     return;
                 }
                 case 'J' -> {
-                    calculadora.apagaMenu();
-                    System.out.print("Digite o valor do cateto a: ");
-                    BigDecimal catetoA = scanner.nextBigDecimal();
-                    System.out.print("Digite o valor do cateto b: ");
-                    BigDecimal catetoB = scanner.nextBigDecimal();
-                    BigDecimal resultado = new HipotenusaTrianguloRetangulo().calcular(catetoA,catetoB);
-                    System.out.println("Resultado = " + resultado);
+                    System.out.println("Resultado = " + new HipotenusaTrianguloRetangulo().calcular(numeros));
                     return;
                 }
-                */
                 default -> System.out.print("OPÇÃO INVÁLIDA, POR FAVOR DIGITE NOVAMENTE: ");
             }
         } while (opcao != 'X');
