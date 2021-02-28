@@ -45,7 +45,7 @@ public class Main {
                 System.out.print("Digite o valor do cateto a: ");
                 numeros[0] = scanner.nextBigDecimal();
                 System.out.print("Digite o valor do cateto b: ");
-                numeros[0] = scanner.nextBigDecimal();
+                numeros[1] = scanner.nextBigDecimal();
             }
             switch (opcao) {
                 case 'X' -> {
